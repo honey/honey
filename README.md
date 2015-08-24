@@ -71,6 +71,10 @@ description
 
 ## Specifics
 
+### Naming
+
+Honey files should use `.hny` or `.honey`. The shorter form is preferred.
+
 ### Indentation
 
 Honey strictly requires soft two-space indentation.
