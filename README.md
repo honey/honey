@@ -144,3 +144,5 @@ npm test
 # TODO
 
 - [ ] add tests for invalid syntax
+- [ ] write syntax highlighter for atom
+- [ ] write syntax highlighter for [linguist](https://github.com/github/linguist)
