@@ -1,3 +1,5 @@
+# HONEY
+
 HONEY is a human-friendly object notation that easily converts to JSON.
 
 It's a simple line-based, whitespace-sensitive file format,
@@ -44,7 +46,7 @@ version
     Numero Dos
 ```
 
-### Features
+## Features
 
 - minimal syntax
 - supports comments
@@ -53,14 +55,14 @@ version
 - human-friendly conflicts
 - easily translates from / to JSON
 
-### Goals
+## Goals
 
 - don't scare humans away
 - minimize syntax handling in version control conflicts
 
-### Specifics
+## Specifics
 
-#### Indentation
+### Indentation
 
 Honey strictly requires soft two-space indentation.
 
@@ -78,7 +80,7 @@ name
 \thoney
 ```
 
-#### Comments
+### Comments
 
 Honey supports single-line comments, javascript style.
 Inline and multi-line comments are not supported.
@@ -90,7 +92,7 @@ name
   honey // this is NOT a comment
 ```
 
-#### Type inference
+### Type inference
 
 Honey supports the same types as JSON:
 
@@ -118,6 +120,7 @@ description
   - two
   - three
   """
+```
 
 # Contributing
 
