@@ -16,11 +16,19 @@ name
 version
   0.1.0
 
+description
+  HONEY is a human-friendly object notation that easily converts to JSON.
+
+  It's a simple line-based, whitespace-sensitive file format, designed to
+  play well with humans.
+
+
 // lists
 - this
 - is
 - a
 - list
+
 
 // lists of lists
 -
@@ -29,6 +37,7 @@ version
 -
   - three
   - four
+
 
 // list of objects
 -
