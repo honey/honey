@@ -1,0 +1,7 @@
+{
+  "number": 9.99,
+  "string": "9.99",
+  "truthy": true,
+  "falsy": false,
+  "nully": null
+}

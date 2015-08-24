@@ -1,0 +1,10 @@
+{
+  "simple": [
+    "one",
+    "two"
+  ],
+  "multiline": [
+    "This is\nmultiple lines",
+    ["This one\ntoo"]
+  ]
+}

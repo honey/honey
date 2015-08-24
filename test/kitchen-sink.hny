@@ -1,0 +1,55 @@
+status
+  200
+
+data
+  records
+    -
+      id
+        "1"
+
+      name
+        one
+
+      description
+        testing
+        1
+        2
+        3
+
+      settings
+        a
+          true
+
+        b
+          false
+
+        c
+          - 1
+          - 2
+          - 3
+
+
+    -
+      id
+        "2"
+
+      name
+        two
+
+      description
+        """
+        - a
+        - b
+        """
+
+      settings
+        a
+          null
+
+        b
+          false
+
+        c
+          - 3
+          - 2
+          - 1

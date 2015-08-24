@@ -1,0 +1,16 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "strict": 0,
+    "curly": 0,
+    "camelcase": 0,
+    "no-debugger": 0,
+    "no-multi-spaces": 0,
+    "no-use-before-define": [2, "nofunc"]
+  }
+}

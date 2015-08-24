@@ -1,0 +1,35 @@
+{
+  "name": "honey",
+  "version": "0.1.0",
+  "description": "Human-friendly object notation that easily converts to JSON",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "babel-node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/honey/honey.git"
+  },
+  "keywords": [
+    "javascript",
+    "json",
+    "honey",
+    "parse",
+    "stringify"
+  ],
+  "author": "Ryan Mohr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/honey/honey/issues"
+  },
+  "homepage": "https://github.com/honey/honey",
+  "devDependencies": {
+    "eslint": "~1.0.0-rc-1",
+    "babel-eslint": "~3.1.23",
+    "babel": "~5.6.23",
+    "glob": "~5.0.14"
+  }
+}
