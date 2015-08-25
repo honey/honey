@@ -2,19 +2,10 @@ a
   test
 
 b
-  "test"
+  test
+  test
 
 c
-  test
-  test
-
-d
-  """
-  test
-  test
-  """
-
-e
   """
   - test
   - test

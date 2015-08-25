@@ -5,9 +5,7 @@ import HONEY from "./index";
 
 // TODO: allow pattern to be passed as arg
 let options = {
-  // pattern: /basic-/,
-  parse: true,
-  stringify: false
+  // pattern: /kitchen-sink/
 };
 
 let passed = 0;
@@ -39,13 +37,15 @@ function read(path) {
 }
 
 function test(honey, json) {
-  if (options.parse) {
-    // make sure parse works as expected
-    assert.equal(JSON.stringify(HONEY.parse(honey), null, "  "), json);
-  }
+  // make sure parse works as expected
+  assert.equal(JSON.stringify(HONEY.parse(honey), null, "  "), json);
 
-  if (options.stringify) {
-    // make sure stringify works as expected
-    assert.equal(HONEY.stringify(JSON.parse(json), null, "  "), honey);
-  }
+  // make sure stringify works as expected
+  assert.equal(HONEY.stringify(JSON.parse(json), null, "  "), decomment(honey));
+}
+
+// Strips all comments from source
+function decomment(source) {
+  let lines = source.split("\n");
+  return lines.filter((line) => !/^\s*[/]{2}/.test(line)).join("\n");
 }

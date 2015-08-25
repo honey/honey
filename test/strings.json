@@ -1,7 +1,5 @@
 {
   "a": "test",
-  "b": "test",
-  "c": "test\ntest",
-  "d": "test\ntest",
-  "e": "- test\n- test"
+  "b": "test\ntest",
+  "c": "- test\n- test"
 }
