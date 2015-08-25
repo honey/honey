@@ -1,15 +1,10 @@
 # HONEY
 
-HONEY is a human-friendly object notation that easily converts to JSON.
+HONEY is the human-friendly object notation that easily converts to JSON.
 
-It's a simple line-based, whitespace-sensitive file format,
-designed to play well with multi-line strings and version control systems and
-not scare away humans.
-
-Here's what it looks like:
+Here's an example of what it looks like:
 
 ```
-// objects (yup, comments are supported)
 name
   honey
 
@@ -22,18 +17,23 @@ description
   It's a simple line-based, whitespace-sensitive file format, designed to
   play well with humans.
 
+tags
+  - stringify
+  - parse
+  - honey
+  - json
+  - javascript
+```
 
-// lists
-- this
-- is
-- a
-- list
+It's a blend of JSON's simplicity and markdown's legibility, designed to play
+well with version control systems and not scare off humans.
 
-
-// lists of lists
+```
+// lists of lists (yup, comments are supported)
 -
   - one
   - two
+
 -
   - three
   - four
@@ -45,28 +45,40 @@ description
     1
 
   name
-    Numero Uno
+    One
 
 -
   id
     2
 
   name
-    Numero Dos
+    Two
+
+// empty values
+empty list
+  []
+
+empty object
+  {}
+
+empty string
+  ""
+
+null value
+  null
 ```
 
 ## Features
 
 - minimal syntax
-- supports comments
-- supports multi-line strings
+- comments
+- multi-line strings without funky escape sequences
 - implicit type inference following JSON rules
-- human-friendly conflicts
 - easily translates from / to JSON
 
 ## Goals
 
-- don't scare humans away
+- don't scare humans
 - minimize syntax handling in version control conflicts
 
 ## Specifics
@@ -117,16 +129,30 @@ Honey supports the same types as JSON:
 - false
 - null
 
-You can wrap any single line value in double quotes to force it to a string.
-If you have text that looks similar to Honey's list-syntax you'll need to use
-the heredoc form.
+You can wrap any value in double quotes to skip the implicit typecasting:
 
 ```
-// forced string value example
-name
-  "37"
+// this will be a number
+version
+  1.0
 
-// heredoc example
+// this will be a string
+version
+  "1.0"
+```
+
+### Multi-line strings / heredocs
+
+Multi-line strings should work just fine in most cases without any special
+handling. However, if you have text that looks similar to Honey's object notation
+you'll need to use the heredoc form:
+
+```
+description
+  This is a multi-line string.
+  It doesn't require anything fancy.
+
+// if it looks like an object or a list, use a heredoc
 description
   """
   - one
@@ -135,7 +161,13 @@ description
   """
 ```
 
-# Contributing
+Leading whitespace is automatically trimmed up to the natural indentation.
+
+### Browser support
+
+Built for ES5 and up. Use a polyfill if you need to support older browsers.
+
+## Contributing
 
 ```
 git clone git@github.com:honey/honey.git
@@ -145,10 +177,10 @@ npm install
 npm test
 ```
 
-# TODO
+## TODO
 
-- [ ] finish `parse`
-- [ ] implement `stringify`
+- [ ] add comparisons to JSON, CSON, YAML, and TOML
+- [ ] decide if stringify should enforce newline at end of file
 - [ ] add tests for invalid syntax
 - [ ] write syntax highlighter for atom
 - [ ] write syntax highlighter for [linguist](https://github.com/github/linguist)
