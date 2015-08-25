@@ -169,10 +169,6 @@ description
 
 Leading whitespace is automatically trimmed up to the natural indentation.
 
-### Browser support
-
-Built for ES5 and up. Use a polyfill if you need to support older browsers.
-
 ### Why not use JSON / CSON / YAML / TOML?
 
 [JSON][json]'s simple structure is great but the syntax is a little too technical
