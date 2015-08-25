@@ -202,7 +202,6 @@ npm test
 
 ## TODO
 
-- [ ] add comparisons to JSON, CSON, YAML, and TOML
 - [ ] decide if stringify should enforce newline at end of file
 - [ ] add tests for invalid syntax
 - [ ] write syntax highlighter for atom
