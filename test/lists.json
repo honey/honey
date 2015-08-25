@@ -5,6 +5,6 @@
   ],
   "multiline": [
     "This is\nmultiple lines",
-    ["This one\ntoo"]
+    "This one\ntoo"
   ]
 }
