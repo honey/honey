@@ -1,11 +1,14 @@
 {
   "name": "hny",
-  "version": "0.1.0",
-  "description": "Human-friendly object notation that easily converts to JSON",
+  "version": "0.1.1",
+  "description": "HONEY, the human-friendly object notation",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "src/"
+  ],
   "scripts": {
     "test": "babel-node test.js"
   },
