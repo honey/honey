@@ -12,13 +12,13 @@ Here's an example of what it looks like:
 // a 1.0 release is reached.
 
 name
-  honey
+  HONEY
 
 version
   0.1.0
 
 description
-  HONEY is a human-friendly object notation that easily converts to JSON.
+  HONEY is the human-friendly object notation that easily converts to JSON.
 
   It's a simple line-based, whitespace-sensitive file format, designed to
   play well with humans.
@@ -31,7 +31,7 @@ tags
   - javascript
 ```
 
-Honey is a blend of JSON's simplicity and markdown's legibility, designed to
+HONEY is a blend of JSON's simplicity and markdown's legibility, designed to
 play well with version control systems and not scare off humans.
 
 ```
@@ -87,45 +87,59 @@ null value
 - implicit type inference following JSON rules
 - easily translates to / from JSON
 
+## Usage
+
+This repo includes a reference implementation written in es6.
+You are free to copy, modify, and redistribute it at will. For convenience
+the package is available as `hny` on NPM. It will be updated as the
+spec evolves.
+
+```
+import HONEY from "hny";
+
+HONEY.parse(string)
+HONEY.stringify(value)
+```
+
 ## Specifics
 
 ### Naming
 
-Honey files should use `.hny` or `.honey`. The shorter form is preferred.
+HONEY files should use `.hny` or `.honey`. The shorter form is preferred.
 
 ### Indentation
 
-Honey strictly requires soft two-space indentation.
+HONEY strictly requires soft two-space indentation.
 
 ```
 // right
 name
-  honey
+  HONEY
 
 // wrong
 name
-    honey
+    HONEY
 
 // wrong
 name
-\thoney
+\tHONEY
 ```
 
 ### Comments
 
-Honey supports single-line comments, javascript style.
+HONEY supports single-line comments, javascript style.
 Inline and multi-line comments are not supported.
 
 ```
 // this is
 // a comment
 name
-  honey // this is NOT a comment
+  HONEY // this is NOT a comment
 ```
 
 ### Type inference
 
-Honey supports the same types as JSON:
+HONEY supports the same types as JSON:
 
 - string
 - number
@@ -150,7 +164,7 @@ version
 ### Multi-line strings / heredocs
 
 Multi-line strings should work just fine in most cases without any special
-handling. However, if you have text that looks similar to Honey's object
+handling. However, if you have text that looks similar to HONEY's object
 notation you'll need to use the heredoc form:
 
 ```
@@ -199,6 +213,11 @@ npm install -g babel
 npm install
 npm test
 ```
+
+Got a proposal for simplifying HONEY's syntax even further? Great! Open an
+issue or submit a pull request.
+
+I'd still love to see a more natural way to handle empty lists and objects.
 
 ## TODO
 
