@@ -342,4 +342,4 @@ I'd still love to see a more natural way to handle empty lists and objects.
 
 ## Thanks!
 
-- [@ryankanno][https://twitter.com/ryankanno] for taking the initial swing
+- [@ryankanno](https://twitter.com/ryankanno) for taking the initial swing
