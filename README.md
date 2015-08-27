@@ -339,3 +339,7 @@ I'd still love to see a more natural way to handle empty lists and objects.
 [1]: http://www.sitepoint.com/anatomy-of-an-exploit-an-in-depth-look-at-the-rails-yaml-vulnerability/
 [2]: http://yaml.org/spec/1.2/spec.html
 [3]: http://www.yaml.org/refcard.html
+
+## Thanks!
+
+- [@ryankanno][https://twitter.com/ryankanno] for taking the initial swing
