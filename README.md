@@ -1,16 +1,17 @@
 # HONEY
 
-HONEY is the human-friendly object notation that easily converts to JSON.
+The human-friendly object notation.
 
 Built by [@rymohr](http://twitter.com/rymohr) for [Kumu](https://kumu.io).
 
 Here's an example of what it looks like:
 
 ```
+///////
 // WARNING: The syntax is still evolving and awaiting a solid round of
 // constructive feedback and criticism. Do not use in production until
-// a 1.0 release is reached.
-
+// a 1.0 release is reached. (Yes, this is a comment.)
+//////
 name
   HONEY
 
@@ -18,10 +19,14 @@ version
   0.1.0
 
 description
-  HONEY is the human-friendly object notation that easily converts to JSON.
+  HONEY the human-friendly object notation.
 
   It's a simple line-based, whitespace-sensitive file format, designed to
   play well with humans.
+
+bugs
+  url
+    https://github.com/honey/honey/issues
 
 tags
   - stringify
@@ -31,21 +36,92 @@ tags
   - javascript
 ```
 
-HONEY is a blend of JSON's simplicity and markdown's legibility, designed to
-play well with version control systems and not scare off humans.
+HONEY blends JSON's simplicity and markdown's legibility in a language designed
+to play well with version control systems and not scare off humans.
 
+It's an implicitly-typed language that offloads the complexity of the language
+from the user onto the parser as much as possible.
+
+## Examples
+
+### Objects
+
+```js
+HONEY.parse(`
+name
+  HONEY
+
+description
+  HONEY
+  The human-friendly object notation.
+
+version
+  0.1.0
+
+bugs
+  url
+    https://github.com/honey/honey/issues
+`)
+
+// result
+{
+  "name": "HONEY",
+  "description": "HONEY\nThe human-friendly object notation.",
+  "version": "0.1.0",
+  "bugs": {
+    "url": "https://github.com/honey/honey/issues"
+  }
+}
 ```
-// lists of lists (yup, comments are supported)
--
-  - one
-  - two
 
+### Lists
+
+Simple lists:
+
+```js
+HONEY.parse(`
+- one
+- two
+- three
+`)
+
+// result
+[
+  "one",
+  "two",
+  "three"
+]
+```
+
+Nested lists:
+
+```js
+HONEY.parse(`
+-
+  - two
+  - three
 -
   - three
   - four
+`)
 
+// result
+[
+  [
+    "one",
+    "two"
+  ],
+  [
+    "three",
+    "four"
+  ]
+]
+```
 
-// list of objects
+Lists of objects:
+
+```js
+HONEY.parse(`
 -
   id
     1
@@ -59,19 +135,49 @@ play well with version control systems and not scare off humans.
 
   name
     Two
+`)
 
-// empty values
-empty list
-  []
+// result
+[
+  {
+    "id": 1,
+    "name": "One"
+  },
+  {
+    "id": 2,
+    "name": "Two"
+  }
+]
+```
 
-empty object
-  {}
+### Empty values
 
-empty string
-  ""
+HELP: I would still love to see more natural ways to represent these. However,
+since HONEY was predominantly inspired by JSON we'll stick with the JSON syntax
+until a better solution is proposed. https://github.com/honey/honey/issues/1
 
-null value
-  null
+```js
+HONEY.parse(`
+  null value
+    null
+
+  empty string
+    ""
+
+  empty list
+    []
+
+  empty object
+    {}
+`)
+
+// result
+{
+  "null value": null,
+  "empty string": "",
+  "empty list": [],
+  "empty object": {}
+}
 ```
 
 ## Goals
@@ -221,7 +327,7 @@ I'd still love to see a more natural way to handle empty lists and objects.
 
 ## TODO
 
-- [ ] decide if stringify should enforce newline at end of file
+- [ ] decide if stringify should add trailing newline
 - [ ] add tests for invalid syntax
 - [ ] write syntax highlighter for atom
 - [ ] write syntax highlighter for [linguist](https://github.com/github/linguist)
