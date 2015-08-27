@@ -40,7 +40,8 @@ HONEY blends JSON's simplicity and markdown's legibility in a language designed
 to play well with version control systems and not scare off humans.
 
 It's an implicitly-typed language that offloads the complexity of the language
-from the user onto the parser as much as possible.
+from the user onto the parser as much as possible. Consistency and clarity of
+intention are favored over being concise and pedantic.
 
 ## Examples
 
